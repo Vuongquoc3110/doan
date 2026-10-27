@@ -1,0 +1,21 @@
+node_modules/
+.expo/
+.web-check/
+dist/
+*.log
+.env
+.env.*
+!.env.example
+.local-backups/
+.local-logs/
+
+# Local settings, generated reports and build/cache files
+.vscode/
+*.tsbuildinfo
+coverage/
+server/customer-audit-results.json
+*.pem
+*.key
+*.p12
+*.keystore
+*.jks

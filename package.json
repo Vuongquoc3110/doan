@@ -1,0 +1,19 @@
+{
+  "name": "klever-fruit-monorepo",
+  "version": "1.0.0",
+  "description": "Klever Fruit - He thong ban trai cay nhap khau va gio qua tang cao cap (Fullstack Expo + Express + MySQL)",
+  "scripts": {
+    "start": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/start-web.ps1",
+    "web": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/start-web.ps1",
+    "dev": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/start-web.ps1",
+    "server:dev": "npm --prefix server run dev",
+    "mobile:dev": "npm --prefix mobile run start --",
+    "mobile:web": "npm --prefix mobile run web --",
+    "db:setup": "npm --prefix server run db:setup",
+    "db:reset": "npm --prefix server run db:reset",
+    "test:e2e": "npm --prefix server run test:e2e",
+    "check:server": "npm --prefix server run build",
+    "check:mobile": "node mobile/node_modules/typescript/bin/tsc --noEmit -p mobile/tsconfig.json",
+    "check:storefront": "node server/src/test-storefront.cjs"
+  }
+}

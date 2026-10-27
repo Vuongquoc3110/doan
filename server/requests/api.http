@@ -1,0 +1,223 @@
+### ==============================================================================
+### KLEVER FRUIT API TESTING SUITE (REST CLIENT / api.http)
+### ==============================================================================
+
+@baseUrl = http://localhost:4000
+@adminPhone = 0900000001
+@staffPhone = 0900000002
+@customerPhone = 0900000011
+@password = 1
+
+### ------------------------------------------------------------------------------
+### 1. HEALTH CHECK
+### ------------------------------------------------------------------------------
+GET {{baseUrl}}/api/health
+
+### ------------------------------------------------------------------------------
+### 2. AUTHENTICATION & RBAC
+### ------------------------------------------------------------------------------
+# @name adminLogin
+POST {{baseUrl}}/api/v1/auth/login
+Content-Type: application/json
+
+{
+  "phone": "{{adminPhone}}",
+  "password": "{{password}}"
+}
+
+###
+@adminToken = {{adminLogin.response.body.data.tokens.accessToken}}
+
+# @name staffLogin
+POST {{baseUrl}}/api/v1/auth/login
+Content-Type: application/json
+
+{
+  "phone": "{{staffPhone}}",
+  "password": "{{password}}"
+}
+
+###
+@staffToken = {{staffLogin.response.body.data.tokens.accessToken}}
+
+# @name customerLogin
+POST {{baseUrl}}/api/v1/auth/login
+Content-Type: application/json
+
+{
+  "phone": "{{customerPhone}}",
+  "password": "{{password}}"
+}
+
+###
+@customerToken = {{customerLogin.response.body.data.tokens.accessToken}}
+
+### Đăng ký tài khoản mới
+POST {{baseUrl}}/api/v1/auth/register
+Content-Type: application/json
+
+{
+  "phone": "0988776655",
+  "fullName": "Khách Hàng Mới",
+  "password": "Password@123",
+  "email": "khachmoi@gmail.com"
+}
+
+### Quên mật khẩu - Gửi OTP giả lập (hiện trên console server)
+POST {{baseUrl}}/api/v1/auth/forgot-password
+Content-Type: application/json
+
+{
+  "phone": "0900000011"
+}
+
+### ------------------------------------------------------------------------------
+### 3. PUBLIC API
+### ------------------------------------------------------------------------------
+### Lấy danh sách sản phẩm (có lọc và phân trang)
+GET {{baseUrl}}/api/v1/public/products?limit=10&page=1&sort=popular
+
+### Lọc theo khoảng giá
+GET {{baseUrl}}/api/v1/public/products?price_range=500k_1m
+
+### Tìm kiếm sản phẩm
+GET {{baseUrl}}/api/v1/public/products?search=nho
+
+### Chi tiết sản phẩm
+GET {{baseUrl}}/api/v1/public/products/1
+
+### Danh sách danh mục
+GET {{baseUrl}}/api/v1/public/categories
+
+### Danh sách bộ sưu tập
+GET {{baseUrl}}/api/v1/public/collections
+
+### Danh sách 22+ cửa hàng
+GET {{baseUrl}}/api/v1/public/stores
+
+### Tìm cửa hàng gần nhất theo tọa độ
+GET {{baseUrl}}/api/v1/public/stores/nearest?lat=21.0116&lng=105.8182
+
+### Tin tức & Bài viết
+GET {{baseUrl}}/api/v1/public/articles
+
+### Banners
+GET {{baseUrl}}/api/v1/public/banners
+
+### Kiểm tra mã giảm giá
+POST {{baseUrl}}/api/v1/public/coupons/check
+Content-Type: application/json
+
+{
+  "code": "KLEVERWELCOME",
+  "orderAmount": 1500000
+}
+
+### ------------------------------------------------------------------------------
+### 4. GIỎ HÀNG (CART)
+### ------------------------------------------------------------------------------
+### Lấy giỏ hàng
+GET {{baseUrl}}/api/v1/cart
+Authorization: Bearer {{customerToken}}
+
+### Thêm sản phẩm vào giỏ
+POST {{baseUrl}}/api/v1/cart/items
+Authorization: Bearer {{customerToken}}
+Content-Type: application/json
+
+{
+  "variantId": 1,
+  "qty": 2
+}
+
+### ------------------------------------------------------------------------------
+### 5. CHECKOUT & ORDERS (TRANSACTION TRỪ KHO)
+### ------------------------------------------------------------------------------
+POST {{baseUrl}}/api/v1/orders/checkout
+Authorization: Bearer {{customerToken}}
+Content-Type: application/json
+
+{
+  "storeId": 1,
+  "receiverName": "Hoàng Tuấn Anh",
+  "receiverPhone": "0900000011",
+  "receiverAddress": "63 Yên Lãng, Đống Đa, Hà Nội",
+  "deliveryType": "ship",
+  "deliveryDate": "2026-10-15",
+  "deliverySlot": "09:00 - 11:30",
+  "greetingMessage": "Chúc mừng ngày Phụ Nữ Việt Nam 20/10!",
+  "ribbonColor": "Ruy-băng Tím Klever",
+  "paymentMethod": "vietqr",
+  "items": [
+    { "variantId": 1, "qty": 1 },
+    { "variantId": 16, "qty": 1 }
+  ]
+}
+
+### Lấy danh sách đơn hàng của tôi
+GET {{baseUrl}}/api/v1/orders/my-orders
+Authorization: Bearer {{customerToken}}
+
+### ------------------------------------------------------------------------------
+### 6. KHU VỰC NHÂN VIÊN (STAFF)
+### ------------------------------------------------------------------------------
+### Tổng quan ca làm việc
+GET {{baseUrl}}/api/v1/staff/shift-overview
+Authorization: Bearer {{staffToken}}
+
+### Danh sách đơn hàng cửa hàng mình
+GET {{baseUrl}}/api/v1/staff/orders
+Authorization: Bearer {{staffToken}}
+
+### Tồn kho cửa hàng
+GET {{baseUrl}}/api/v1/staff/inventory
+Authorization: Bearer {{staffToken}}
+
+### Chấm công Check-in
+POST {{baseUrl}}/api/v1/staff/attendance/check-in
+Authorization: Bearer {{staffToken}}
+Content-Type: application/json
+
+{
+  "note": "Check-in đầu giờ"
+}
+
+### ------------------------------------------------------------------------------
+### 7. KHU VỰC QUẢN TRỊ (ADMIN)
+### ------------------------------------------------------------------------------
+### Dashboard doanh thu và biểu đồ
+GET {{baseUrl}}/api/v1/admin/dashboard
+Authorization: Bearer {{adminToken}}
+
+### Danh sách đơn hàng toàn hệ thống
+GET {{baseUrl}}/api/v1/admin/orders
+Authorization: Bearer {{adminToken}}
+
+### Quản lý người dùng
+GET {{baseUrl}}/api/v1/admin/users
+Authorization: Bearer {{adminToken}}
+
+### Tạo mã giảm giá mới
+POST {{baseUrl}}/api/v1/admin/coupons
+Authorization: Bearer {{adminToken}}
+Content-Type: application/json
+
+{
+  "code": "SIEUHANG100K",
+  "type": "fixed",
+  "value": 100000,
+  "min_order": 1000000,
+  "max_uses": 50,
+  "expires_at": "2026-12-31 23:59:59"
+}
+
+### Phát hành Gift Card hàng loạt
+POST {{baseUrl}}/api/v1/admin/gift-cards/bulk-generate
+Authorization: Bearer {{adminToken}}
+Content-Type: application/json
+
+{
+  "count": 3,
+  "balance": 1000000,
+  "prefix": "VIP"
+}

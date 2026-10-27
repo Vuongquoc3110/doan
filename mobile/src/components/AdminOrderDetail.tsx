@@ -1,0 +1,10 @@
+import React from 'react';
+import {Text,View,ActivityIndicator} from 'react-native';
+import {useQuery} from '@tanstack/react-query';
+import apiClient from '../api/client';
+import {Sheet} from './AdminControls';
+import {formatVnd,formatDateTime} from '../utils/format';
+export function AdminOrderDetail({orderId,close}:{orderId:number|null;close:()=>void}){
+  const {data:order,isLoading,isError}=useQuery({queryKey:['admin-order-detail',orderId],enabled:!!orderId,queryFn:async()=>(await apiClient.get('/v1/admin/orders/'+orderId)).data.data});
+  return <Sheet visible={!!orderId} title="Chi tiết đơn hàng" close={close}>{isLoading?<ActivityIndicator/>:isError?<Text accessibilityRole="alert">Không tải được chi tiết đơn. Đóng và thử lại.</Text>:order&&<View style={{gap:12}}><Text style={{fontWeight:'800'}}>{order.code} · {order.status}</Text><Text>{order.receiver_name} · {order.receiver_phone}</Text><Text>{order.receiver_address} · {order.store_name}</Text><Text>Ngày hẹn: {order.delivery_date?.slice(0,10)} · {order.delivery_slot}</Text><Text>Lời chúc: {order.greeting_message||'Không'}</Text><Text>Ruy băng: {order.ribbon_color||'Không'}</Text>{order.items.map((item:any)=><View key={item.id}><Text style={{fontWeight:'700'}}>{item.product_name} · {item.variant_label}</Text><Text>{item.qty} × {formatVnd(item.unit_price)} = {formatVnd(item.total_price)}</Text></View>)}<Text>Tạm tính {formatVnd(order.subtotal)} · Phí giao {formatVnd(order.ship_fee)} · Giảm {formatVnd(order.discount)}</Text><Text style={{fontWeight:'800'}}>Tổng {formatVnd(order.total)} · {order.payment_method} · {order.payment_status}</Text><Text style={{fontWeight:'700'}}>Thông tin VAT</Text>{order.vat_request?Object.entries(order.vat_request).map(([key,value])=><Text key={key}>{key}: {String(value)}</Text>):<Text>Không yêu cầu hóa đơn VAT.</Text>}<Text style={{fontWeight:'700'}}>Lịch sử xử lý</Text>{order.history.map((h:any)=><Text key={h.id}>{formatDateTime(h.created_at)} · {h.status} · {h.note}</Text>)}</View>}</Sheet>;
+}

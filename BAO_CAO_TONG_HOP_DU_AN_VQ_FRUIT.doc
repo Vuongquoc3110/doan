@@ -1,0 +1,591 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office'
+      xmlns:w='urn:schemas-microsoft-com:office:word'
+      xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+<meta charset="utf-8">
+<title>BÁO CÁO TỔNG HỢP & PHẢN BIỆN DỰ ÁN VQ FRUIT</title>
+<!--[if gte mso 9]>
+<xml>
+ <w:WordDocument>
+  <w:View>Print</w:View>
+  <w:Zoom>100</w:Zoom>
+  <w:DoNotOptimizeForBrowser/>
+ </w:WordDocument>
+</xml>
+<![endif]-->
+<style>
+  @page {
+    size: A4;
+    margin: 20mm 20mm 20mm 20mm;
+    mso-header-margin: 10mm;
+    mso-footer-margin: 10mm;
+  }
+  body {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 11pt;
+    line-height: 1.5;
+    color: #1a1a1a;
+    background-color: #ffffff;
+  }
+  h1.doc-title {
+    font-size: 24pt;
+    font-weight: bold;
+    color: #183e32;
+    text-align: center;
+    margin-top: 20pt;
+    margin-bottom: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  p.doc-subtitle {
+    font-size: 13pt;
+    font-style: italic;
+    color: #b78a46;
+    text-align: center;
+    margin-bottom: 25pt;
+  }
+  .meta-box {
+    background-color: #f7f9f6;
+    border: 1px solid #d8e2d5;
+    border-left: 6px solid #183e32;
+    padding: 12pt 16pt;
+    margin-bottom: 24pt;
+    font-size: 10pt;
+  }
+  .meta-box table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .meta-box td {
+    padding: 3pt 6pt;
+    border: none;
+  }
+  h1 {
+    font-size: 15pt;
+    font-weight: bold;
+    color: #183e32;
+    border-bottom: 2px solid #183e32;
+    padding-bottom: 4pt;
+    margin-top: 22pt;
+    margin-bottom: 10pt;
+    text-transform: uppercase;
+  }
+  h2 {
+    font-size: 12.5pt;
+    font-weight: bold;
+    color: #2b5744;
+    margin-top: 14pt;
+    margin-bottom: 6pt;
+  }
+  h3 {
+    font-size: 11.5pt;
+    font-weight: bold;
+    color: #446655;
+    margin-top: 10pt;
+    margin-bottom: 4pt;
+  }
+  p {
+    margin-top: 0;
+    margin-bottom: 8pt;
+    text-align: justify;
+  }
+  ul, ol {
+    margin-top: 0;
+    margin-bottom: 8pt;
+    padding-left: 20pt;
+  }
+  li {
+    margin-bottom: 4pt;
+    text-align: justify;
+  }
+  table.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8pt;
+    margin-bottom: 14pt;
+    font-size: 9.5pt;
+  }
+  table.custom-table th {
+    background-color: #183e32;
+    color: #ffffff;
+    font-weight: bold;
+    text-align: left;
+    padding: 6pt 8pt;
+    border: 1px solid #183e32;
+  }
+  table.custom-table td {
+    padding: 5pt 8pt;
+    border: 1px solid #d3ded0;
+    vertical-align: top;
+  }
+  table.custom-table tr:nth-child(even) {
+    background-color: #f9fbf8;
+  }
+  .badge-success {
+    background-color: #e6f4ea;
+    color: #137333;
+    font-weight: bold;
+    padding: 2pt 5pt;
+    border-radius: 3pt;
+    display: inline-block;
+  }
+  .badge-danger {
+    background-color: #fce8e6;
+    color: #c5221f;
+    font-weight: bold;
+    padding: 2pt 5pt;
+    border-radius: 3pt;
+    display: inline-block;
+  }
+  .badge-warning {
+    background-color: #fef7e0;
+    color: #b06000;
+    font-weight: bold;
+    padding: 2pt 5pt;
+    border-radius: 3pt;
+    display: inline-block;
+  }
+  .callout {
+    background-color: #fdfaf2;
+    border: 1px solid #f2e2be;
+    border-left: 5px solid #b78a46;
+    padding: 8pt 12pt;
+    margin: 10pt 0;
+    font-size: 10.5pt;
+  }
+  .callout-title {
+    font-weight: bold;
+    color: #8a6422;
+    margin-bottom: 3pt;
+  }
+  .code-inline {
+    font-family: 'Consolas', 'Courier New', monospace;
+    background-color: #f0f3ee;
+    padding: 1pt 4pt;
+    border-radius: 3pt;
+    font-size: 9.5pt;
+    color: #1b4d3e;
+  }
+  .footer-note {
+    text-align: center;
+    font-size: 9pt;
+    color: #778877;
+    margin-top: 30pt;
+    border-top: 1px solid #d8e2d5;
+    padding-top: 8pt;
+  }
+</style>
+</head>
+<body>
+
+<h1 class="doc-title">BÁO CÁO TỔNG HỢP & PHẢN BIỆN TOÀN DIỆN<br>DỰ ÁN VQ FRUIT (KLEVER FRUIT)</h1>
+<p class="doc-subtitle">Hệ Thống Bán Lẻ Trái Cây Nhập Khẩu & Giỏ Quà Tặng Cao Cấp (Expo Router & Node.js Express/MySQL)</p>
+
+<div class="meta-box">
+  <table>
+    <tr>
+      <td width="20%"><strong>Dự án:</strong></td>
+      <td width="40%">VQ FRUIT (Klever Fruit Omnichannel)</td>
+      <td width="20%"><strong>Thời gian khảo sát:</strong></td>
+      <td width="20%">Tháng 10/2026</td>
+    </tr>
+    <tr>
+      <td><strong>Công nghệ Frontend:</strong></td>
+      <td>React Native / Expo Router v57 (Web & Mobile)</td>
+      <td><strong>Mô hình chuỗi:</strong></td>
+      <td>22 Chi nhánh (Hà Nội & TP.HCM)</td>
+    </tr>
+    <tr>
+      <td><strong>Công nghệ Backend:</strong></td>
+      <td>Node.js, Express, TypeScript, MySQL 8 / MariaDB</td>
+      <td><strong>Phân quyền hệ thống:</strong></td>
+      <td>Khách hàng, Nhân viên, Quản trị viên</td>
+    </tr>
+    <tr>
+      <td><strong>Tài khoản Admin kiểm thử:</strong></td>
+      <td>SĐT: <code>0900000001</code> / Mật khẩu: <code>1</code></td>
+      <td><strong>Trạng thái hệ thống:</strong></td>
+      <td>Đã qua tích hợp & Đồng bộ API</td>
+    </tr>
+  </table>
+</div>
+
+<div class="meta-box">
+  <h2>CẬP NHẬT KHẮC PHỤC — 23/10/2026</h2>
+  <p>Các nhận xét và lộ trình bên dưới được giữ lại làm hồ sơ khảo sát ban đầu. Sau đối chiếu mã nguồn, các mục sau đã được bổ sung hoặc sửa:</p>
+  <ul>
+    <li>Admin: lọc báo cáo theo ngày và xuất Excel .xlsx; lọc/tìm đơn và xem chi tiết sản phẩm, lời chúc, VAT.</li>
+    <li>Tạo sản phẩm kèm ảnh, nhiều quy cách/SKU; sửa giá từng biến thể; lọc tài khoản và cấp tài khoản nhân viên theo chi nhánh.</li>
+    <li>Lọc kho theo cửa hàng/SKU, nhập hàng từ nhà cung cấp theo lô và hạn dùng; nguồn xuất kho điều chuyển lấy đúng cửa hàng của dòng được chọn.</li>
+    <li>Danh sách voucher có lượt dùng/hạn dùng; tạo/sửa/bật/tắt banner và lịch chiến dịch, nối ra trang khách và hiển thị đếm ngược. Đếm ngược không tự thay đổi giá bán.</li>
+    <li>Đổi trả: xem/phóng to ảnh bằng chứng, từ chối kèm lý do bắt buộc và hiển thị phản hồi trong chi tiết đơn của khách.</li>
+    <li>Tài khoản bị khóa bị từ chối ngay cả khi còn token cũ; không cho tự khóa hoặc khóa Admin tại màn hình người dùng. Chấm công kiểm tra GPS thật và bán kính cửa hàng, không dùng tọa độ giả khi thiếu quyền vị trí.</li>
+    <li>Sửa hộp thoại xác nhận trên Web: React Native Web không thực thi Alert.alert; đã bổ sung hộp thoại có callback cho các thao tác xác nhận.</li>
+    <li>Các phần Mục IV đã có mã nguồn từ đợt trước: POS quét SKU/in LAN 58/80mm, lô/FIFO, SePay/VNPay, Ahamove, Expo/ZNS và Verified Buyer. Kích hoạt nhà cung cấp và nghiệm thu thiết bị thật vẫn cần tài khoản, khóa API và cấu hình tương ứng.</li>
+  </ul>
+  <p><strong>Kiểm chứng:</strong> 151 ca HTTP trong database kiểm thử riêng, kiểm tra nội dung workbook Excel, kiểm thử hộp thoại Web, biên dịch Server/Mobile và xuất bản Web. Tồn kho mới khởi tạo bằng 0; nhập tồn qua lô có hạn dùng, không tự cộng 20 sản phẩm vào mọi cửa hàng.</p>
+  <p>Đối chiếu chi tiết: <code>docs/reference/REPORT_FIXES.md</code>. Cấu hình dịch vụ/thiết bị: <code>docs/reference/OPERATIONS_FEATURES.md</code>. Bản trước cập nhật được lưu trong <code>.local-backups/BAO_CAO_TONG_HOP_DU_AN_VQ_FRUIT.before-fixes.doc</code>.</p>
+</div>
+
+<h1>I. TỔNG QUAN KIẾN TRÚC & PHẠM VI NGHIỆP VỤ</h1>
+<p>
+  Dự án <strong>VQ FRUIT</strong> được xây dựng theo mô hình <strong>O2O (Online-to-Offline)</strong> nhằm quản trị và vận hành chuỗi 22 cửa hàng bán lẻ trái cây nhập khẩu và giỏ quà tặng biếu sang trọng. Hệ thống kết nối đồng bộ giữa trải nghiệm mua sắm trực tuyến của người tiêu dùng (Mobile App / Web) với nghiệp vụ bán hàng tại quầy (POS), quản trị kho hàng tủ mát và điều phối đơn hàng đa kênh của đội ngũ nhân viên và ban giám đốc.
+</p>
+<p>Hệ sinh thái của dự án bao gồm 3 phân hệ người dùng chính:</p>
+<ul>
+  <li><strong>Cổng Khách hàng (Customer Storefront)</strong>: Khám phá bộ sưu tập quà tặng, trái cây tươi cao cấp theo nguồn gốc xuất xứ, giỏ hàng, tùy biến quà biếu (thiệp mừng, ruy-băng), yêu cầu xuất hóa đơn VAT, thanh toán VietQR động và tra cứu trạng thái đơn hàng cùng chính sách bảo hành 48 giờ.</li>
+  <li><strong>Cổng Nhân viên chi nhánh (Staff Operations & POS)</strong>: Điểm danh chấm công GPS theo bán kính cửa hàng, tạo đơn bán lẻ tại quầy POS, tra cứu thông tin tích điểm khách hàng qua SĐT, quản lý kiểm kê tủ mát, báo hao hụt hàng ngày và xử lý tiếp nhận khiếu nại đổi trả.</li>
+  <li><strong>Cổng Quản trị trung tâm (Admin Workspace)</strong>: Giám sát chỉ số kinh doanh toàn chuỗi (doanh thu, đơn hàng, khách hàng), điều chuyển đơn hàng liên chi nhánh, điều phối cân bằng kho hàng, duyệt hoàn tiền khiếu nại, phát hành Gift Card doanh nghiệp và quản trị tài khoản người dùng.</li>
+</ul>
+
+<h1>II. ĐÁNH GIÁ CÁC TÍNH NĂNG ĐÃ LÀM RẤT TỐT (ĐIỂM SÁNG)</h1>
+
+<h2>1. Kiểm soát tồn kho nghiêm ngặt & Khóa chống bán vượt (Pessimistic Locking)</h2>
+<p>
+  Trong bán lẻ trái cây cao cấp, số lượng tồn kho tại mỗi chi nhánh thường có hạn và biến động liên tục. Dự án đã áp dụng cơ chế <strong>Database Transaction với cú pháp <code>SELECT ... FOR UPDATE</code></strong> trên bảng <code>inventory</code> khi khách hàng thực hiện checkout hoặc nhân viên chốt đơn POS. Cơ chế này khóa bản ghi tồn kho của biến thể tại chi nhánh đó trong micro-giây xử lý, ngăn chặn triệt để hiện tượng <em>Race Condition / Over-selling</em> (nhiều khách cùng thanh toán sản phẩm cuối cùng tại một điểm bán). Nếu kho chi nhánh không đủ số lượng, hệ thống rollback toàn bộ đơn và thông báo rõ ràng cho khách.
+</p>
+
+<h2>2. Chuẩn hóa quy cách đóng gói đặc thù theo ngành trái cây</h2>
+<p>
+  Trái cây không thể chỉ bán theo đơn vị "cái" đơn thuần. Module <code>sale-units.ts</code> trong dự án đã tự động phân tích tên gọi, danh mục và đặc tính sản phẩm để chuẩn hóa quy cách bán:
+</p>
+<ul>
+  <li><strong>Giỏ quà & Hộp quà biếu</strong>: Chuẩn hóa theo <em>1 giỏ · Tiêu chuẩn</em> và <em>1 giỏ · Cao cấp</em>.</li>
+  <li><strong>Trái cây nhập khẩu đóng khay/hộp</strong> (Cherry, Việt quất, Dâu tây): Tự động tách đơn vị <em>1 hộp/khay (trọng lượng)</em> và <em>Bộ 4 hộp/khay</em>.</li>
+  <li><strong>Trái cây theo chùm hoặc quả lớn</strong> (Nho sữa, Bưởi, Dưa lưới): Chuẩn hóa thành <em>1 chùm</em> hoặc <em>1 quả</em>.</li>
+  <li><strong>Nước ép & Sinh tố</strong>: Chuẩn hóa thành <em>1 chai (dung tích)</em> và <em>Lốc 4 chai</em>.</li>
+</ul>
+
+<h2>3. Nghiệp vụ giỏ quà biếu & Khách hàng doanh nghiệp chỉn chu</h2>
+<p>
+  Đáp ứng đặc thù biếu tặng cao cấp của thương hiệu Klever Fruit / VQ FRUIT:
+</p>
+<ul>
+  <li>Cho phép khách hàng lựa chọn màu ruy-băng thắt giỏ quà: <em>Tím Klever VIP, Đỏ Hoàng Gia, Vàng Ánh Kim</em>.</li>
+  <li>Nhập lời chúc in thiệp trang trọng miễn phí đi kèm đơn hàng.</li>
+  <li>Lựa chọn ngày giao và khung giờ nhận linh hoạt (Giao hỏa tốc 2 giờ, Buổi sáng, Buổi chiều, Buổi tối).</li>
+  <li>Tích hợp form yêu cầu xuất hóa đơn giá trị gia tăng (VAT) cho doanh nghiệp (Tên công ty, Mã số thuế) ngay trong luồng thanh toán.</li>
+</ul>
+
+<h2>4. Cam kết bảo hành & Đổi trả chất lượng trong 48 Giờ</h2>
+<p>
+  Klever Fruit nổi tiếng với cam kết chất lượng tươi ngon. Hệ thống đã hiện thực hóa điều này bằng code: máy chủ tự động tính toán khoảng thời gian kể từ thời điểm đơn hàng chuyển sang trạng thái <code>COMPLETED</code>. Nếu thời gian nhỏ hơn hoặc bằng 48 giờ, khách hàng có quyền gửi yêu cầu đổi trả kèm hình ảnh phản ánh và tài khoản nhận hoàn tiền; ngược lại nút đổi trả sẽ tự động khóa lại theo đúng chính sách bảo hành.
+</p>
+
+<h2>5. Thanh toán VietQR động chuẩn Napas 247</h2>
+<p>
+  Tự động sinh mã VietQR theo chuẩn Napas với ngân hàng thụ hưởng, số tài khoản, số tiền chính xác từng đồng và nội dung chuyển khoản là mã đơn hàng duy nhất (ví dụ: <code>KF26xxxxxx</code>). Khách hàng chỉ cần dùng App ngân hàng bất kỳ để quét là thông tin được điền tự động 100%, không lo sai sót số tiền hay nội dung.
+</p>
+
+<h2>6. Tìm kiếm cửa hàng gần nhất bằng định vị GPS (Haversine Formula)</h2>
+<p>
+  Tận dụng cảm biến GPS của thiết bị di động kết hợp với công thức lượng giác Haversine tính toán khoảng cách đường chim bay đến tọa độ của 22 chi nhánh, từ đó tự động gợi ý cho khách cửa hàng gần nhất để tối ưu chi phí và thời gian giao hàng.
+</p>
+
+<h1>III. KIỂM THỬ & PHẢN BIỆN CHI TIẾT TRANG QUẢN TRỊ ADMIN</h1>
+
+<p>
+  Sau khi đăng nhập tài khoản Quản trị viên (SĐT: <code>0900000001</code> / Mật khẩu: <code>1</code>), hệ thống chuyển trực tiếp vào không gian làm việc Admin (<code>/(admin)</code>). Dưới đây là đánh giá và phản biện cụ thể trên từng màn hình chức năng:
+</p>
+
+<table class="custom-table">
+  <thead>
+    <tr>
+      <th width="18%">Phân hệ Admin</th>
+      <th width="32%">Tính năng đã hoạt động tốt</th>
+      <th width="28%">Điểm hạn chế / Lỗi phát hiện</th>
+      <th width="22%">Đánh giá & Khuyến nghị</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>1. Tổng quan<br>(Dashboard)</strong></td>
+      <td>
+        - 4 thẻ KPI doanh thu, đơn hàng, khách hàng, sản phẩm.<br>
+        - Biểu đồ cột xu hướng doanh thu 14 ngày từ view SQL.<br>
+        - Top 5 chi nhánh đạt doanh thu cao nhất.<br>
+        - Top 5 sản phẩm bán chạy nhất.
+      </td>
+      <td>
+        - Cố định 14 ngày gần nhất, chưa có bộ lọc chọn khoảng ngày (Tuần này, Tháng này, Quý này).<br>
+        - Chưa có nút xuất báo cáo Excel cho kế toán.
+      </td>
+      <td><span class="badge-success">TỐT (8.5/10)</span><br>Cần thêm bộ lọc ngày linh hoạt.</td>
+    </tr>
+    <tr>
+      <td><strong>2. Quản lý Đơn hàng<br>(Orders)</strong></td>
+      <td>
+        - Xem toàn bộ danh sách đơn hàng 22 chi nhánh.<br>
+        - Tính năng <strong>Điều chuyển đơn hàng</strong> sang chi nhánh khác tiếp nhận khi cần tối ưu tuyến đường giao.
+      </td>
+      <td>
+        - Giao diện chưa có ô tìm kiếm mã đơn / tên khách.<br>
+        - Chưa có tab lọc theo trạng thái đơn hàng.<br>
+        - Chưa bấm xem chi tiết từng món hàng trong đơn và thông tin xuất hóa đơn VAT.
+      </td>
+      <td><span class="badge-warning">TRUNG BÌNH (6.5/10)</span><br>Cần bổ sung Modal xem chi tiết đơn hàng & bộ lọc.</td>
+    </tr>
+    <tr>
+      <td><strong>3. Sản phẩm & Giá bán<br>(Products)</strong></td>
+      <td>
+        - Liệt kê ảnh, tên, xuất xứ, danh mục và giá gốc.<br>
+        - Có modal sửa giá bán nhanh cho sản phẩm.
+      </td>
+      <td>
+        - <strong>Lỗi:</strong> Ô tìm kiếm gõ nhưng server chưa lọc theo từ khóa.<br>
+        - <strong>Thiếu:</strong> Chưa có nút và form tạo sản phẩm mới trên giao diện.<br>
+        - Chỉ sửa giá gốc cha, chưa hỗ trợ sửa giá từng biến thể (Hộp/Giỏ).
+      </td>
+      <td><span class="badge-warning">CẦN CẢI THIỆN (6.0/10)</span><br>Cần form Thêm sản phẩm và sửa giá biến thể.</td>
+    </tr>
+    <tr>
+      <td><strong>4. Điều phối Kho hàng<br>(Inventory)</strong></td>
+      <td>
+        - Cảnh báo badge đỏ các mặt hàng tồn kho thấp (&lt; 10).<br>
+        - Tạo lệnh điều chuyển tồn kho giữa 2 chi nhánh.<br>
+        - Tự động ghi nhật ký Audit Log khi điều chuyển.
+      </td>
+      <td>
+        - Chưa có bộ lọc để xem riêng kho của từng cửa hàng cụ thể.<br>
+        - Chưa có form nhập lô hàng mới từ nhà cung cấp về kho tổng/kho chi nhánh.
+      </td>
+      <td><span class="badge-success">KHÁ (7.5/10)</span><br>Cần thêm lọc theo cửa hàng.</td>
+    </tr>
+    <tr>
+      <td><strong>5. Quản lý Chi nhánh<br>(Stores)</strong></td>
+      <td>
+        - Lọc chi nhánh theo thành phố (Hà Nội, TP.HCM).<br>
+        - Thiết kế công tắc Switch bật/tắt hoạt động cửa hàng.
+      </td>
+      <td>
+        - <strong>Lỗi 404:</strong> Backend ban đầu thiếu route <code>GET /admin/stores</code> và <code>PUT .../status</code>.<br>
+        - Bảng <code>stores</code> ban đầu thiếu cột <code>is_active</code>.
+      </td>
+      <td><span class="badge-danger">LỖI HỆ THỐNG</span><br>Đã có giải pháp migration và bổ sung route.</td>
+    </tr>
+    <tr>
+      <td><strong>6. Khách hàng & Nhân sự<br>(Users)</strong></td>
+      <td>
+        - Lọc tài khoản theo vai trò (Khách, Nhân viên, Admin).<br>
+        - Hiển thị cửa hàng trực thuộc của nhân viên.<br>
+        - Nút Khóa / Mở khóa tài khoản người dùng ngay lập tức.
+      </td>
+      <td>
+        - Thanh tìm kiếm chưa được kết nối lọc tại backend.<br>
+        - Chưa có nút và form tạo tài khoản nhân viên mới trên giao diện (mặc dù API đã có).
+      </td>
+      <td><span class="badge-warning">TRUNG BÌNH (6.5/10)</span><br>Cần form cấp tài khoản nhân viên mới.</td>
+    </tr>
+    <tr>
+      <td><strong>7. Marketing & Ưu đãi<br>(Marketing)</strong></td>
+      <td>
+        - Tab 1: Sinh hàng loạt Thẻ quà tặng (Gift Card) số lượng lớn kèm mã bảo mật.<br>
+        - Tab 2: Tạo mã giảm giá (Voucher/Coupon) có điều kiện đơn tối thiểu.
+      </td>
+      <td>
+        - Chưa có bảng danh sách theo dõi các voucher đang chạy, số lượt đã dùng và ngày hết hạn.<br>
+        - Chưa có giao diện đăng và quản lý Banner quảng cáo trang chủ.
+      </td>
+      <td><span class="badge-success">KHÁ (7.0/10)</span><br>Cần bổ sung bảng danh sách voucher & quản lý Banner.</td>
+    </tr>
+    <tr>
+      <td><strong>8. Phê duyệt & Đánh giá<br>(Approvals)</strong></td>
+      <td>
+        - Duyệt hoàn tiền khiếu nại đổi trả và tự động đổi trạng thái đơn hàng sang <code>RETURNED</code>.<br>
+        - Duyệt hiển thị hoặc ẩn đánh giá sản phẩm của khách.
+      </td>
+      <td>
+        - Chưa hiển thị hình ảnh chứng minh trái cây dập hỏng khách đính kèm.<br>
+        - Thiếu nút từ chối yêu cầu đổi trả kèm lý do phản hồi cho khách.
+      </td>
+      <td><span class="badge-success">TỐT (8.0/10)</span><br>Cần thêm hiển thị ảnh bằng chứng đổi trả.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1>IV. PHẢN BIỆN CÁC TÍNH NĂNG CÒN THIẾU HOẶC YẾU TRONG TOÀN BỘ HỆ THỐNG</h1>
+
+<h2>1. Quản lý Hạn sử dụng & Lô hàng trái cây tươi (Batch & Expiry Date / FIFO)</h2>
+<div class="callout">
+  <div class="callout-title">Vấn đề cốt tử của ngành trái cây tươi:</div>
+  Trái cây tươi là mặt hàng suy hao nhanh (thời gian lưu kho chuẩn từ 2 - 7 ngày tùy loại trong tủ mát). Hệ thống cơ bản trước đây chỉ quản lý một con số số lượng tồn kho duy nhất (<code>inventory.qty</code>). Khi nhân viên nhập hàng mới về, số lượng được cộng dồn nhưng không phân biệt được đâu là quả mới nhập, đâu là quả đã nằm tủ mát 5 ngày.
+</div>
+<p><strong>Giải pháp cần có:</strong></p>
+<ul>
+  <li>Bổ sung bảng quản lý lô hàng <code>inventory_batches</code> chứa: Mã lô, Ngày nhập kho, Hạn dùng khuyến nghị, Số lượng tồn của lô.</li>
+  <li>Áp dụng nguyên tắc xuất kho <strong>FIFO (First In, First Out)</strong>: Khi tạo đơn hàng hoặc bán POS, hệ thống ưu tiên trừ tồn kho ở lô nhập trước.</li>
+  <li>Tính năng cảnh báo cận hạn (trước 24h - 48h) gửi tới quản lý chi nhánh để chủ động lên chương trình xả hàng giảm giá hoặc chuyển chế biến sinh tố/nước ép.</li>
+</ul>
+
+<h2>2. Tự động hóa thanh toán ngân hàng & Đối soát tự động (Payment Automation)</h2>
+<p>
+  Hiện tại, khi khách hàng quét mã VietQR, hệ thống dừng lại ở việc hiển thị thông tin chuyển khoản và phụ thuộc vào việc nhân viên vào app ngân hàng kiểm tra thủ công rồi bấm xác nhận.
+</p>
+<p><strong>Giải pháp cần có:</strong></p>
+<ul>
+  <li>Tích hợp Webhook biến động số dư ngân hàng qua <strong>SePay / Casso</strong>: Khi khách chuyển khoản đúng mã đơn, hệ thống tự động nhận tín hiệu qua webhook, xác thực chữ ký bảo mật HMAC, tự động chuyển đơn sang trạng thái <code>paid</code> và thông báo cho nhân viên đóng gói mà không cần con người can thiệp.</li>
+  <li>Tích hợp IPN chữ ký số HMAC-SHA512 cho cổng VNPay thật.</li>
+</ul>
+
+<h2>3. Vận chuyển tức thời & Giao hàng hỏa tốc 2 Giờ (On-Demand Logistics)</h2>
+<p>
+  Phí ship hiện đang tính cố định (25.000₫ cho đơn dưới 500.000₫). Để thực hiện đúng cam kết giao trái cây trong 2 giờ, hệ thống cần tích hợp với các đơn vị vận chuyển tức thời:
+</p>
+<ul>
+  <li>Tích hợp API báo giá và tạo chuyến <strong>Ahamove / Lalamove / GrabExpress</strong>: Tự động tính phí vận chuyển theo khoảng cách thực tế từ chi nhánh được chọn tới địa chỉ khách hàng.</li>
+  <li>Khi đơn hàng chuyển sang trạng thái <code>READY</code> (Đã đóng gói xong), hệ thống tự động phát lệnh gọi tài xế đến lấy hàng và đồng bộ mã vận đơn để khách theo dõi vị trí tài xế theo thời gian thực.</li>
+</ul>
+
+<h2>4. Thông báo đẩy & Chăm sóc khách hàng tự động (Omnichannel Notifications)</h2>
+<p>
+  Khi đơn hàng thay đổi trạng thái (Đã nhận đơn $\rightarrow$ Đang đóng gói $\rightarrow$ Đang giao $\rightarrow$ Đã giao), khách hàng hiện chưa nhận được thông báo tức thời nếu không mở ứng dụng.
+</p>
+<p><strong>Giải pháp cần có:</strong></p>
+<ul>
+  <li>Tích hợp <strong>Expo Push Notifications / Firebase Cloud Messaging (FCM)</strong> để đẩy thông báo lên màn hình khóa điện thoại.</li>
+  <li>Gửi tin nhắn thông báo thương hiệu qua <strong>Zalo ZNS / SMS Brandname</strong> kèm đường link tra cứu tiến trình đơn hàng.</li>
+</ul>
+
+<h2>5. Tiện ích phần cứng bán hàng tại quầy (POS Hardware Support)</h2>
+<p>
+  Tại cửa hàng, nhân viên thu ngân cần thao tác bán hàng trong vài giây:
+</p>
+<ul>
+  <li>Tích hợp lệnh in hóa đơn nhiệt khổ 58mm / 80mm qua mạng nội bộ LAN/Wi-Fi (chuẩn lệnh ESC/POS).</li>
+  <li>Hỗ trợ quét mã vạch SKU sản phẩm bằng Camera thiết bị di động hoặc máy quét barcode cổng USB/Bluetooth để chọn sản phẩm vào giỏ hàng siêu tốc.</li>
+</ul>
+
+<h2>6. Đánh giá sản phẩm có xác thực (Verified Buyer)</h2>
+<p>
+  Để đảm bảo uy tín thương hiệu trái cây cao cấp, chỉ những tài khoản đã thực sự mua và hoàn tất đơn hàng có chứa sản phẩm đó mới được quyền gửi đánh giá (tránh spam đánh giá ảo hoặc cạnh tranh không lành mạnh).
+</p>
+
+<h1>V. BẢNG ĐỐI CHIẾU LỖI BẤT ĐỒNG BỘ API (API CONTRACT MISMATCHES)</h1>
+
+<p>
+  Quá trình rà soát giữa mã nguồn giao diện (<code>mobile/app/</code>) và máy chủ API (<code>server/src/routes/</code>) phát hiện các điểm nghẽn lệch hợp đồng dữ liệu. Dưới đây là bảng đối chiếu chi tiết và chuẩn hóa đã được thiết lập:
+</p>
+
+<table class="custom-table">
+  <thead>
+    <tr>
+      <th width="18%">Chức năng</th>
+      <th width="28%">Giao diện Mobile gọi</th>
+      <th width="28%">Hợp đồng Server chuẩn hóa</th>
+      <th width="26%">Xử lý đồng bộ</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Tạo đơn POS tại quầy</strong></td>
+      <td><code>POST /v1/staff/pos/checkout</code><br>Body: <code>customer_phone</code>, <code>items: [{variant_id}]</code></td>
+      <td><code>POST /v1/staff/pos/orders</code><br>Body: <code>customerPhone</code>, <code>items: [{variantId}]</code></td>
+      <td>Server hỗ trợ song song cả 2 URL và tự động chuẩn hóa trường dữ liệu; hỗ trợ thanh toán <code>cod</code>/<code>vietqr</code>/<code>vnpay</code>.</td>
+    </tr>
+    <tr>
+      <td><strong>Cập nhật trạng thái đơn</strong></td>
+      <td>Gửi chữ thường: <code>processing</code>, <code>delivering</code></td>
+      <td>Enum chuẩn chữ hoa: <code>PREPARING</code>, <code>SHIPPING</code>, <code>COMPLETED</code></td>
+      <td>Server tự động ánh xạ: <code>processing</code> &rarr; <code>PREPARING</code>, <code>delivering</code> &rarr; <code>SHIPPING</code>.</td>
+    </tr>
+    <tr>
+      <td><strong>Danh sách đơn nhân viên</strong></td>
+      <td>Đọc <code>order_code</code>, <code>recipient_name</code>, <code>shipping_address</code></td>
+      <td>Đọc <code>code</code>, <code>receiver_name</code>, <code>receiver_address</code>, <code>total</code></td>
+      <td>Đồng bộ tên trường giữa Mobile và Server, hiển thị đầy đủ thông tin khách hàng và số tiền.</td>
+    </tr>
+    <tr>
+      <td><strong>Điều chỉnh tồn kho</strong></td>
+      <td><code>POST .../stock-in</code> &amp; <code>POST .../waste</code></td>
+      <td><code>POST /v1/staff/inventory/adjust</code><br>Body: <code>{ variantId, changeQty, type }</code></td>
+      <td>Server hỗ trợ cả route chuyên biệt cũ lẫn route tổng hợp mới, ghi nhận audit log đầy đủ.</td>
+    </tr>
+    <tr>
+      <td><strong>Khách xem đơn hàng</strong></td>
+      <td><code>GET /v1/orders</code></td>
+      <td><code>GET /v1/orders/my-orders</code></td>
+      <td>Server hỗ trợ thêm alias <code>GET /v1/orders</code> trỏ về danh sách đơn của user đang đăng nhập.</td>
+    </tr>
+    <tr>
+      <td><strong>Khách gửi đổi trả 48H</strong></td>
+      <td><code>POST /v1/orders/:id/return</code></td>
+      <td><code>POST /v1/orders/:id/return-request</code></td>
+      <td>Server nhận cả 2 URL; kiểm tra giới hạn 48 giờ nghiêm ngặt từ thời điểm <code>COMPLETED</code>.</td>
+    </tr>
+    <tr>
+      <td><strong>Điều chuyển đơn Admin</strong></td>
+      <td><code>POST /v1/admin/orders/:id/transfer</code></td>
+      <td><code>PUT /v1/admin/orders/:id/assign-store</code></td>
+      <td>Server hỗ trợ cả 2 route; chuyển cả số lượng tồn kho đã giữ sang chi nhánh mới an toàn.</td>
+    </tr>
+    <tr>
+      <td><strong>Sửa giá sản phẩm Admin</strong></td>
+      <td><code>PUT /v1/admin/products/:id/price</code></td>
+      <td><code>PUT /v1/admin/products/:id</code></td>
+      <td>Server hỗ trợ cả 2 route; đồng thời tự động cập nhật giá biến thể theo tỷ lệ giá gốc mới.</td>
+    </tr>
+    <tr>
+      <td><strong>Quản lý chi nhánh Admin</strong></td>
+      <td><code>GET /v1/admin/stores</code> &amp; <code>PUT .../status</code></td>
+      <td>Cần có route quản trị chuyên biệt</td>
+      <td>Bổ sung migration thêm cột <code>is_active</code> vào bảng <code>stores</code>; thêm 2 route quản trị vào <code>admin.routes.ts</code>.</td>
+    </tr>
+    <tr>
+      <td><strong>Tạo Gift Card hàng loạt</strong></td>
+      <td><code>POST .../gift-cards/generate</code><br>Body: <code>quantity</code>, <code>initial_balance</code></td>
+      <td><code>POST .../gift-cards/bulk-generate</code><br>Body: <code>count</code>, <code>balance</code></td>
+      <td>Server hỗ trợ cả 2 URL và tự động map các tham số tương ứng.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1>VI. LỘ TRÌNH NÂNG CẤP & KHUYẾN NGHỊ VẬN HÀNH (ROADMAP)</h1>
+
+<h2>1. Giai đoạn 1: Hoàn thiện tính khả dụng của Trang Quản trị Admin (Ngay lập tức)</h2>
+<ul>
+  <li>Sửa triệt để các route chi nhánh 404 và kích hoạt chức năng tìm kiếm sản phẩm / tài khoản tại backend.</li>
+  <li>Bổ sung <strong>Form Tạo Sản Phẩm Mới (Add Product Modal)</strong>: Cho phép quản trị viên nhập tên, xuất xứ, danh mục, tải ảnh và khởi tạo số lượng tồn ban đầu cho 22 chi nhánh.</li>
+  <li>Bổ sung <strong>Form Cấp Tài Khoản Nhân Viên (Add Staff Modal)</strong>: Gán nhân viên vào đúng chi nhánh làm việc ngay trên giao diện.</li>
+  <li>Bổ sung <strong>Modal Xem Chi Tiết Đơn Hàng Admin</strong>: Xem danh sách từng quả/hộp trong đơn, đọc lời chúc in thiệp và thông tin xuất hóa đơn VAT công ty.</li>
+</ul>
+
+<h2>2. Giai đoạn 2: Tự động hóa Bán hàng & Vận hành POS Chi nhánh (1 - 2 tháng)</h2>
+<ul>
+  <li>Kết nối máy in hóa đơn nhiệt LAN ESC/POS 58mm/80mm cho quầy thu ngân.</li>
+  <li>Tích hợp Webhook SePay nhận thông báo chuyển khoản ngân hàng tự động, bỏ hoàn toàn việc nhân viên phải kiểm tra tài khoản bằng tay.</li>
+  <li>Kích hoạt quản lý tồn kho theo Lô (Batch) và Hạn dùng (Expiry Date) theo nguyên tắc FIFO.</li>
+</ul>
+
+<h2>3. Giai đoạn 3: Tối ưu Logistics & Trải nghiệm Khách hàng (3 - 6 tháng)</h2>
+<ul>
+  <li>Tích hợp API giao hàng Ahamove / GrabExpress tính phí ship thực tế và điều phối tài xế tự động.</li>
+  <li>Cài đặt dịch vụ thông báo đẩy Expo Push Notifications và Zalo ZNS thông báo lộ trình đơn hàng.</li>
+  <li>Bổ sung phân hệ Quản lý Banner & Chiến dịch Flash Sale đếm ngược giờ vàng trên trang Admin.</li>
+</ul>
+
+<h1>VII. HƯỚNG DẪN KHỞI CHẠY & KIỂM CHỨNG HỆ THỐNG</h1>
+
+<p>Hệ thống đã được đóng gói các script tiện ích tại thư mục gốc. Để khởi chạy toàn bộ:</p>
+<ol>
+  <li>Khởi động toàn bộ Web, Mobile và API: Nhấp đúp vào file <strong><code>MO_WEB.cmd</code></strong> hoặc chạy lệnh:
+    <br><code class="code-inline">npm.cmd run web</code>
+    <br>Script sẽ tự động khởi động MySQL XAMPP, chạy backend API tại cổng <code>4000</code> và khởi chạy Expo Web tại <code>http://localhost:8081</code>.
+  </li>
+  <li>Chạy kiểm thử kiểm tra tính toàn vẹn Storefront (chỉ đọc):
+    <br><code class="code-inline">node server/src/test-storefront.cjs</code>
+  </li>
+  <li>Chạy kiểm thử hợp đồng API (API Contract):
+    <br><code class="code-inline">npm.cmd --prefix server run test:api-contract</code>
+  </li>
+  <li>Kiểm tra type checking toàn bộ mã nguồn Mobile:
+    <br><code class="code-inline">node mobile/node_modules/typescript/bin/tsc --noEmit -p mobile/tsconfig.json</code>
+  </li>
+</ol>
+
+<div class="footer-note">
+  Báo cáo được tổng hợp tự động từ kết quả phân tích và kiểm thử thực tế toàn diện hệ sinh thái VQ FRUIT.<br>
+  © 2026 VQ FRUIT Omnichannel Platform. Bảo lưu mọi quyền.
+</div>
+
+</body>
+</html>

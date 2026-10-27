@@ -1,0 +1,24 @@
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const vm=require('node:vm');
+const ts=require('../../../server/node_modules/typescript');
+const nativeCalls=[];
+const native={Platform:{OS:'web'},Alert:{alert:(...args)=>nativeCalls.push(args)}};
+for(const key of ['Modal','View','Text','TouchableOpacity','ScrollView'])native[key]=key;
+const react={__esModule:true,default:{createElement:(type,props,...children)=>({type,props:props||{},children})},useState:initial=>[initial,()=>{}],useEffect:callback=>callback()};
+const moduleObject={exports:{}};
+const source=ts.transpileModule(fs.readFileSync(__dirname+'/alert.tsx','utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,jsx:ts.JsxEmit.React,esModuleInterop:true,target:ts.ScriptTarget.ES2022}}).outputText;
+vm.runInNewContext(source,{exports:moduleObject.exports,require:name=>name==='react'?react:native});
+const {AppAlert,AppAlertHost}=moduleObject.exports;
+function find(node,type){return [node,...(node?.children||[]).flat(Infinity).flatMap(child=>child&&typeof child==='object'?find(child,type):[])].filter(node=>node?.type===type);}
+let confirmed=0,cancelled=0;
+AppAlert.alert('Confirm','Perform action?',[{text:'Cancel',style:'cancel',onPress:()=>cancelled++},{text:'Confirm',onPress:()=>confirmed++}]);
+AppAlert.alert('Next','Queued message');
+assert.equal(confirmed,0);
+find(AppAlertHost(),'TouchableOpacity')[1].props.onPress();assert.equal(confirmed,1);assert.equal(cancelled,0);
+assert.equal(find(AppAlertHost(),'Text')[0].children[0],'Next');
+find(AppAlertHost(),'TouchableOpacity')[0].props.onPress();assert.equal(AppAlertHost(),null);
+AppAlert.alert('Cancel test','', [{text:'Cancel',style:'cancel',onPress:()=>cancelled++},{text:'Confirm',onPress:()=>confirmed++}]);
+find(AppAlertHost(),'TouchableOpacity')[0].props.onPress();assert.equal(cancelled,1);assert.equal(confirmed,1);
+native.Platform.OS='android';AppAlert.alert('Native','Still native');assert.equal(nativeCalls.length,1);
+console.log('PASS: web alerts wait for confirmation, preserve FIFO, cancel safely; native alerts remain native.');
