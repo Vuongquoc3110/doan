@@ -1,4 +1,4 @@
-# VQ FRUIT
+# doan - VQ FRUIT
 
 Ứng dụng bán trái cây và quà tặng, gồm Expo Router và API Express/MySQL.
 
